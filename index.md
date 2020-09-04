@@ -30,7 +30,7 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 
 ### Networking in k8s
 
-** k8s doesn't use docker bridge and doesn't use docker networking so how k8s can communicate ?**
+**k8s doesn't use docker bridge and doesn't use docker networking so how k8s can communicate ?**
     Yes, That's a really good point in k8s we cannot use the network resources shared by docker such 
     as docker0.
 
@@ -52,12 +52,12 @@ Kube-Proxy will maintain the communication between the containers accross the wo
 1. Single node k8s cluster 
 If you have minikube and configure custer than VM ware , Virtual box.
 The coolest part is you can setup a container and that container will setup the minikube cluster inside the container 
-** So you can image a tool to manage container can be run inside a container and inside the container it will manage your container and interact with the docker engine **
+**So you can image a tool to manage container can be run inside a container and inside the container it will manage your container and interact with the docker engine**
 Inside a container another container is running which triggers a kubernetes cluster 
 
 Command you require to run a container engine of minikube you can exectue the following command 
 
-```
+```bash
 minikube start --driver=<driver_name> # here the driver name you have to specify vmbox or docker.
 # If you want to use docker so you can run it with 
 minikube start --driver=docker
@@ -65,11 +65,11 @@ minikube start --driver=docker
 docker exec -it minikube bash 
 ```
 No Minikube is running in your local system and you can access the nodes which are running in your local environment by 
-```
+
+```bash
 kubectl get nodes # The output will look like this 
 # NAME       STATUS   ROLES    AGE   VERSION
 # minikube   Ready    master   21h   v1.18.3
-
 ```
 2. Multi Node k8s cluster
     2.a) 1 Master N-Minion 
@@ -80,7 +80,7 @@ kubectl get nodes # The output will look like this
     2. AKS
 If you want to connect to any file on the remote location you can always use the command 
 
-```
+```bash
 kubectl get nodes --kubeconfig <fileName>.conf
 # In windows you have to specify the complete path of the file
 ```
@@ -91,7 +91,7 @@ The containers are encapsulated known as pods. We can say like pod is a wrapper 
 Short story which might help us to understand better :-
 Think of a big shop which produces a good quality of clothes such as shirts,pants a local vendor purchase those products and sell it on local market . Good reputed firms such as Zara ,US polo also purchase those products a little touch/change is added and tag is attached now its a Quality product 
 We can think Pod as a zara product which makes it more cool and awesome.
-``` 
+``` bash
 kubectl run nginx -image nginx
 kubectl get pods 
 # To check the network assigned to the pods 
