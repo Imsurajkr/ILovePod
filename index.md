@@ -48,3 +48,4 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 ### Support or Contact
 
 Have any doubt regariding the docs please Mail [infosurajkumard@gmail.com](#).
+New updates Coming soon
