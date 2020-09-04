@@ -34,15 +34,15 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
     Yes, That's a really good point in k8s we cannot use the network resources shared by docker such 
     as docker0.
 
-    We will create a bridge <yourNameBridgeNetwork>. Which will be connection to all the resouorces in the minion.
-    Create container any where the ip will be assigned from <yourNameBridgeNetwork> only and master will also use that bridge only
+We will create a bridge <yourNameBridgeNetwork>. Which will be connection to all the resouorces in the minion.
+Create container any where the ip will be assigned from <yourNameBridgeNetwork> only and master will also use that bridge only
 
-    In present market there are so many networks which can help us with such features 
-    1. Flannel 
-    2. Callico 
-    3. Cisco ASI 
-    4. Weave-net 
-    5. calico 
+In present market there are so many networks which can help us with such features 
+1. Flannel 
+2. Callico 
+3. Cisco ASI 
+4. Weave-net 
+5. calico 
 
 ### Support or Contact
 
