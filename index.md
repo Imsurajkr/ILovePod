@@ -2,12 +2,15 @@
 ### Welcome to My kubernetes Jouney
 
 I am a DevOps engineer at Fiftyfivetech.<br />
-I will share deep dive knowledge of kubernetes which I learned from various sources.
+I will share deep dive knowledge of kubernetes which I learned from various sources.<br />
+I am assuming the reader have some knowledge of Docker.<br />
+Familiar with Contanirezed technology and Images.<br />
+Bonus :- We will automate the Azure kubernetes service with terraform.<br />
 
 ### Let's start contanirezed app deployment in real world.
 
 What happens in the real time scenerio is a developer writes a code attach a docker file.<br />
-Build a image and deploy it to anywhere where the docker is installed such as 
+Build a image and deploy it to anywhere where the docker is installed such as
 1. DE[ Docker Engine ] running in a server. 
 2. DE[ Docker Engine ] running in a Pc.
 3. DE[ Docker Engine ] running in a cloud.
