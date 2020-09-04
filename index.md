@@ -48,3 +48,4 @@ In present market there are so many networks which can help us with such feature
 
 Have any doubt regariding the docs please Mail [infosurajkumard@gmail.com](#).
 New updates Coming soon
+Go to the next page[here](./new-page.html)
