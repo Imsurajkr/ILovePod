@@ -18,7 +18,7 @@ A project managed by Cloud Native Computing Foundation.
    Maintaining the container count 
 
 - Control Pane 
-   The KubeApi server, Replication controller these components can be called control pane component.
+   The KubeApi server, Replication controller , Master , Minion / Node, etcd these components are togther called control pane.
 
 
 ** How Kubernetes will remember the status of cluster **
@@ -111,25 +111,120 @@ Basically we have to remember 4 major points to before creating a Yaml file
 3. Metadata
 4. specification 
 
-A sample Pod file 
+
+**A sample Pod file** 
 ```bash
 apiVersion: v1
 kind: Pod #Here P is Capital
 metadata: # Some information about the pod  
-  name: surajpod # This is my pod name like container name in docker containers
+  name: <YourName>pod # This is my pod name like container name in docker containers
 spec:
   containers: # About my docker images and Containers info 
     - image: nginx # This is the data of the image which will be pulled from the hub.docker.io
-      name: surajpod # The Name if the container will be suraj pod ** You don't need unique name 
+      name: <YourName>pod # The Name if the container will be suraj pod ** You don't need unique name 
       ports:
         - containerPort: 80 # same as expose port in docker file
 ```
+
+**The command to launch the pods**
+```bash 
+kubectl create -f <podFileName>.yml
+```
+
+### Working in Kubernetes 
+
+The basic flow in which a pod is deployed in kubernetes.
+
+1. Create a YML or JSON file run from kubectl command.
+2. It goes to kubeApiServer. It takes the request to scheduler.
+3. Kube-scheduler will send this to kubelet. 
+4. kubelet takes request over minions.
+5. Kubelet will write the information and inform Kubeapi server that its running pod scheduled. 
+6. KubeApiServer will write this information to database in `etcd` .
+7. etcd stores the data about how much resources are used in pod and all information regarding pod.
+
+## Best practice to write a pod file.
+
+1. Create a manual pod file which is by opening editor and  write the yaml. 
+
+Important terms to remember is **always prefer ports keywords and container port**
+Commands to run the kubernetes cluster 
+
+```bash 
+kubectl get pods # To get the pods details 
+kubectl create -f <podfile>.yml # to create the pod from yaml file 
+# You can also update the pod but only certain fields can be changed not each fields can be updated
+kubectl apply <podName>
+# To delete the Pod 
+kubectl delete pod <podName>
+# To delete all the Pods 
+kubectl delete pod --all
+# To recreate 
+kubectl create -f <podfile>.yml
+```
+**How we can check detailed information about pods**
+```bash 
+kubectl describe pods <podName>
+```
+#### How we can write a pod file without remembring it ??
+
+```bash 
+# We can get the details about the Pod file using 
+kubectl explain pods | less # it will take you to page 1 and display all the commands 
+# To get the details about the specific componets of pod file.
+kubectl explain pods.apiversion | less
+# To get the details about the Kind component of pod file 
+kubectl explain pods.kind | less
+# To get the  details about the spec component of pod file 
+kubectl explain pods.spec | less
+# To get specific components details .
+kubeclt explain pods.spec.containers.ports | less
+```
+## Another best method to Auto generate pod file.
+
+**We can use kubectl command to generate the Pod file** 
+```bash 
+kubectl run <podName> --image=nginx --port 80 --dry-run -o yaml 
+# the --dry-run here will not create a pod but simply checks the syntax 
+# Redirect it to some file so we can use it later 
+kubectl run <podName> --image=nginx --restart Never --dry-run -o yaml > wow.yaml
+# It will create a file with the name wow.yaml . 
+# If you want to generate the json you can change the -o json   
+# --restart is a policy used 
+```
+
+**Key takeaways till here**
+1. Manage pod communication across worker node . 
+2. Kubernetes client - kubectl .
+3. Path token config file in kubernetes is `/etc/kubernetes/admin.conf` .
+4. `Kubectl get ns` It willl give you list of all the namespacecs. 
+5. To check the labels in the pods kubectl get pods --show-labels.
+6. To take help about the apiVersion `kubectl explain <resourceType>`    
+
+Some commands to interact with minikube 
+```bash 
+minikube status 
+minikube ssh # takes you inside the docker conatiner where kubernetes is managinig 
+kubectl describe nodes minikube # more detailed data about minikube node 
+# all the containers 
+```
+
+## So Pod can be created by 5 ways 
+1. YAML
+2. Command Line 
+3. JSON 
+4. API
+5. Programming 
+
+## Here arises a question how to access your application running in a pod ?
+
+Let's Assume Ankita, Mansi, Anurag are working in a project and they have to setup a cluster of kubernetes 
 
 
 
 
 ### Support or Contact
 
-Have any doubt regariding the docs please Mail [infosurajkumard@gmail.com](#).
+Have any doubt regariding the docs please Mail [surajkumar.devp@gmail.com](#).
 New updates Coming soon
 Go to the next page[here](./new-page.html)
