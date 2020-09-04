@@ -231,11 +231,7 @@ Some commands to interact with minikube
 
 ## Here arises a question how to access your application running in a pod ?
 
-Let's Assume Ankita, Mansi, Anurag are working in a project and they have to setup a cluster of kubernetes 
-<script src="https://gist.github.com/nisrulz/11c0d63428b108f10c83.js"></script>
-
-
-<script src="https://gist.github.com/Imsurajkr/6639240790c82866af1f644589542c46.js"></script>
+Let's Assume  are working in a project and they have to setup a cluster of kubernetes 
 
 ### Support or Contact
 
