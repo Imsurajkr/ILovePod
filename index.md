@@ -7,7 +7,6 @@ An open-source project that automates the process of deploying and managing mult
 
 Now let's checkout some cool important components of k8s.
 
-```markdown
 A project managed by Cloud Native Computing Foundation.
 
 # kubeApi Server
@@ -26,7 +25,7 @@ A project managed by Cloud Native Computing Foundation.
     If the applications are failing and every detailed information saved in etcd folder.
     Every single thing is saved in `ETCD` No sql Database
 [Link](url) and ![Image](src)
-```
+
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Networking in k8s
