@@ -75,7 +75,7 @@ The coolest part is you can setup a container and that container will setup the 
 Inside a container another container is running which triggers a kubernetes cluster 
 
 Command you require to run a container engine of minikube you can exectue the following command 
-<script src="https://gist.github.com/Imsurajkr/2540dd6ca5597686981b6397383bc760.js"></script>
+
 ```bash
 minikube start --driver=<driver_name> # here the driver name you have to specify vmbox or docker.
 # If you want to use docker so you can run it with 
@@ -220,12 +220,7 @@ kubectl run <podName> --image=nginx --restart Never --dry-run -o yaml > wow.yaml
 6. To take help about the apiVersion `kubectl explain <resourceType>`    
 
 Some commands to interact with minikube 
-```bash 
-minikube status 
-minikube ssh # takes you inside the docker conatiner where kubernetes is managinig 
-kubectl describe nodes minikube # more detailed data about minikube node 
-# all the containers 
-```
+<script src="https://gist.github.com/Imsurajkr/2540dd6ca5597686981b6397383bc760.js"></script>
 
 ## So Pod can be created by 5 ways 
 1. YAML
