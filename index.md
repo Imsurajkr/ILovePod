@@ -111,7 +111,7 @@ Basically we have to remember 4 major points to before creating a Yaml file
 4. specification 
 
 A sample Pod fiapiVersion: v1
-```
+```bash
 kind: Service 
 metadata: 
   name: myservice1
