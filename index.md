@@ -24,7 +24,7 @@ A project managed by Cloud Native Computing Foundation.
 ** How Kubernetes will remember the status of cluster **
 If the applications are failing and every detailed information saved in etcd folder.
 Every single thing is saved in `ETCD` No sql Database
-[Link](url) and ![Image](assets/image/docker.jpg)
+[Link](url) and ![Image](./assets/image/docker.jpg)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
