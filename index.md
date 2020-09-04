@@ -50,6 +50,7 @@ Kube-Proxy will maintain the communication between the containers accross the wo
 
 ### Types of Installation.
 1. Single node k8s cluster 
+
 If you have minikube and configure custer than VM ware , Virtual box.
 The coolest part is you can setup a container and that container will setup the minikube cluster inside the container 
 **So you can image a tool to manage container can be run inside a container and inside the container it will manage your container and interact with the docker engine**
@@ -78,7 +79,7 @@ kubectl get nodes # The output will look like this
 3. Kubernetes as a service / Cloud provider 
     1. EKS
     2. AKS
-If you want to connect to any file on the remote location you can always use the command 
+\n If you want to connect to any file on the remote location you can always use the command 
 
 ```bash
 kubectl get nodes --kubeconfig <fileName>.conf
@@ -88,7 +89,7 @@ kubectl get nodes --kubeconfig <fileName>.conf
 
 ### Pods 
 The containers are encapsulated known as pods. We can say like pod is a wrapper over container 
-Short story which might help us to understand better :-
+Short story which might help us to understand better :- \n
 Think of a big shop which produces a good quality of clothes such as shirts,pants a local vendor purchase those products and sell it on local market . Good reputed firms such as Zara ,US polo also purchase those products a little touch/change is added and tag is attached now its a Quality product 
 We can think Pod as a zara product which makes it more cool and awesome.
 ``` bash
@@ -113,19 +114,15 @@ Basically we have to remember 4 major points to before creating a Yaml file
 A sample Pod file 
 ```bash
 apiVersion: v1
-kind: Service 
-metadata: 
-  name: myservice1
-
+kind: Pod #Here P is Capital
+metadata: # Some information about the pod  
+  name: surajpod # This is my pod name like container name in docker containers
 spec:
-  ports:
-   - name: mysvcport # Optional field
-     port: 1122 # this is must and is the port of service IP 
-     targetPort: 80 # this must match the port number of POD 
-     protocol: TCP  # optional Field
-  selector:
-   x: hello # this label must be same as pod label where we want to forwad the service 
-  type: NodePort
+  containers: # About my docker images and Containers info 
+    - image: nginx # This is the data of the image which will be pulled from the hub.docker.io
+      name: surajpod # The Name if the container will be suraj pod ** You don't need unique name 
+      ports:
+        - containerPort: 80 # same as expose port in docker file
 ```
 
 
