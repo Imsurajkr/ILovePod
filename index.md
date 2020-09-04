@@ -9,21 +9,21 @@ Now let's checkout some cool important components of k8s.
 
 A project managed by Cloud Native Computing Foundation.
 
-# kubeApi Server
-# Kube Scheduler
-    Kube scheduler schedules the minion.
-# Node Controller 
-    It takes the responsibility to check the minion health it can add a minion to the kubernetes cluster 
-# Replication Controller 
-    Maintaining the container count 
+- kubeApi Server
+- Kube Scheduler
+   Kube scheduler schedules the minion.
+- Node Controller 
+   It takes the responsibility to check the minion health it can add a minion to the kubernetes cluster 
+- Replication Controller 
+   Maintaining the container count 
 
-## Control Pane 
-    The KubeApi server, Replication controller these components can be called control pane component.
+- Control Pane 
+   The KubeApi server, Replication controller these components can be called control pane component.
 
 
 ** How Kubernetes will remember the status of cluster **
-    If the applications are failing and every detailed information saved in etcd folder.
-    Every single thing is saved in `ETCD` No sql Database
+If the applications are failing and every detailed information saved in etcd folder.
+Every single thing is saved in `ETCD` No sql Database
 [Link](url) and ![Image](src)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
