@@ -1,13 +1,17 @@
-## K8S 
+## Hola Mundo  
+### Welcome to My kubernetes Jouney
 
+I am a DevOps engineer at Fiftyfivetech . 
+I will share deep dive knowledge of kubernetes which I learned from various sources.
+
+### Let's start with some basic kubernetes. 
 An open-source project that automates the process of deploying and managing multi-container applications at scale. Kubernetes came into existence in mid-2014 and in a short span of time grown as an open-source community with engineers from Google, Red Hat, and many other companies contributing to the project.
 
+A project managed by Cloud Native Computing Foundation.
 
 ### Major components in Kubernetes 
 
 Now let's checkout some cool important components of k8s.
-
-A project managed by Cloud Native Computing Foundation.
 
 - kubeApi Server
 - Kube Scheduler
