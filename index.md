@@ -46,8 +46,6 @@ If the applications are failing and every detailed information saved in etcd fol
 Every single thing is saved in `ETCD` No sql Database
 [Link](url) and ![Image](./assets/image/docker.jpg)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
 ### Networking in k8s
 
 **k8s doesn't use docker bridge and doesn't use docker networking so how k8s can communicate ?**
@@ -239,6 +237,7 @@ kubectl describe nodes minikube # more detailed data about minikube node
 ## Here arises a question how to access your application running in a pod ?
 
 Let's Assume Ankita, Mansi, Anurag are working in a project and they have to setup a cluster of kubernetes 
+<script src="https://gist.github.com/nisrulz/11c0d63428b108f10c83.js"></script>
 
 
 
