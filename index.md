@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+## K8S 
 
-You can use the [editor on GitHub](https://github.com/Imsurajkr/ILovePod/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+An open-source project that automates the process of deploying and managing multi-container applications at scale. Kubernetes came into existence in mid-2014 and in a short span of time grown as an open-source community with engineers from Google, Red Hat, and many other companies contributing to the project.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Major components in Kubernetes 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Now let's checkout some cool important components of k8s.
 
 ```markdown
-Syntax highlighted code block
+A project managed by Cloud Native Computing Foundation.
 
-# Header 1
-## Header 2
-### Header 3
+# kubeApi Server
+# Kube Scheduler
+    Kube scheduler schedules the minion.
+# Node Controller 
+    It takes the responsibility to check the minion health it can add a minion to the kubernetes cluster 
+# Replication Controller 
+    Maintaining the container count 
 
-- Bulleted
-- List
+## Control Pane 
+    The KubeApi server, Replication controller these components can be called control pane component.
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
-
+** How Kubernetes will remember the status of cluster **
+    If the applications are failing and every detailed information saved in etcd folder.
+    Every single thing is saved in `ETCD` No sql Database
 [Link](url) and ![Image](src)
 ```
-
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+### Networking in k8s
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Imsurajkr/ILovePod/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+** k8s doesn't use docker bridge and doesn't use docker networking so how k8s can communicate ?**
+    Yes, That's a really good point in k8s we cannot use the network resources shared by docker such 
+    as docker0.
+
+    We will create a bridge <yourNameBridgeNetwork>. Which will be connection to all the resouorces in the minion.
+    Create container any where the ip will be assigned from <yourNameBridgeNetwork> only and master will also use that bridge only
+
+    In present market there are so many networks which can help us with such features 
+    1. Flannel 
+    2. Callico 
+    3. Cisco ASI 
+    4. Weave-net 
+    5. calico 
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Have any doubt regariding the docs please Mail [infosurajkumard@gmail.com](#).
