@@ -18,7 +18,7 @@ Build a image and deploy it to anywhere where the docker is installed such as
 Things which are needed to be taken care of 
 1. Downtime 
 2. Security
-3. Upgrade [ Without downtime how can we update from version 1 to version 2 or 3]
+3. Upgrade 
 4. Portability 
 
 An open-source project that automates the process of deploying and managing multi-container applications at scale. Kubernetes came into existence in mid-2014 and in a short span of time grown as an open-source community with engineers from Google, Red Hat, and many other companies contributing to the project.
