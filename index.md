@@ -151,6 +151,7 @@ So as a k8s Administrator or engineer its impossible to manage each and every se
 
 ### Kubelet 
 It can manage all the componets of k8s master.
+Apart from that it also reports to master and let the master know if the container is working or not.<br />
 
 **These are the most important componet we need to learn**
 
@@ -173,52 +174,104 @@ Such as<br />
 You can use any one to create this bridge.I am going to use calico. 
 
 ## Kube-Proxy.
-So in the cluster we setup KubeApi server and many components.
-Now my components can communicate with each other. 
-Now I want a my containers scheduled in multiple minions to communicate each other.
+So in the cluster we setup KubeApi server and many components.<br />
+Now my components can communicate with each other. <br />
+Now I want a my containers scheduled in multiple minions can communicate like.<br />
 My container-3 can communicate to container-2 but container-2 cannot communicate to Container-1.
-
+<br /> These types of situation may occur then the component which is responsible for the communication between the container.<br />
+It will be running **in any minion or master** and maintain communication across the worker nodes.<br />
 
 Kube-Proxy will maintain the communication between the containers accross the worker nodes.
 
 ### Types of Installation.
+
 1. Single node k8s cluster 
 
-If you have minikube and configure custer than VM ware , Virtual box.
-The coolest part is you can setup a container and that container will setup the minikube cluster inside the container 
-**So you can image a tool to manage container can be run inside a container and inside the container it will manage your container and interact with the docker engine**
-Inside a container another container is running which triggers a kubernetes cluster 
+One physical machine where master and minion is running.<br />
+Basically it is for testing and if you are a student you can setup single node cluster<br />
 
-Command you require to run a container engine of minikube you can exectue the following command 
+Let's get started with the single node kubernetes.<br />
 
+**The first thing we need to do is to get Kubectl clinet of k8s.**
+you can install Kubectl [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+We have to set up minikube and configure custer.
+visit the official documenation [here](https://kubernetes.io/docs/tasks/tools/install-minikube/).
+Minikube is popular these days beacuse it can works with all the virtualization tools such as <br />
+1. VM Ware
+2. Virtual Box
+3. KVM
+4. Hyper V
+
+Once you install minikube 
 ```bash
-minikube start --driver=<driver_name> # here the driver name you have to specify vmbox or docker.
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && chmod +x minikube # Download minikube and also give executable permission to minikube
+ls # list the files and check minikube will be present 
+sudo mv minikube /usr/bin/
+# Huraayyy Minikube installed 
+minikube start --driver=<driver_name> # here the driver_name replaced with vmbox , vmware  or docker or multiple things.
 # If you want to use docker so you can run it with 
-minikube start --driver=docker
+minikube start --driver=vmware
 # To take the shell of the docker container 
 docker exec -it minikube bash 
 ```
-No Minikube is running in your local system and you can access the nodes which are running in your local environment by 
+If you dont have vmware or kvm or any other vitualization there's a cool thing you can do which I mentioned in the bash script above that you can use docker.<br />
+Minikube use docker and create a container and this container create another container and there you kubernetes is running.<br />  
+**So you can imagine a tool to manage container can be run inside a container and inside the container it will manage your container and interact with the docker engine** <br />
 
+SOOOOOO COOOLLL!!!!!
+```bash 
+minikube start --driver=docker
+# It will take one docker image and pull one more docker from google and will run a cluster for you.
+# Just do 
+docker exec -it minikube bash # gives you the shell of image
+cat /etc/os-release # you can see we use the latest image of ubuntu
+docker ps # and you can see most of the componets we discussed above will be seen here
+docker stats minikube # you can check the amount of memory using by k8s
+```
+Thats it inside a container another container is running which triggers a kubernetes cluster.<br />
+
+So Minikube is running in your local system and you can access the nodes which are running in your local environment by
+
+Isn't it amazing within some seconds we have our cluster up and running.
+
+We don't have to connect kubectl to minikube as its running in my local system its automatically connected to the kubectl. I have added the installation of kubectl in cloud setup.<br /> 
 ```bash
 kubectl get nodes # The output will look like this 
 # NAME       STATUS   ROLES    AGE   VERSION
 # minikube   Ready    master   21h   v1.18.3
 ```
 2. Multi Node k8s cluster
-    2.a) 1 Master N-Minion 
-    2.b) Multi Master N-minion
+It is divided into 2 categories as 
 
-3. Kubernetes as a service / Cloud provider 
-    1. EKS
-    2. AKS
-\n If you want to connect to any file on the remote location you can always use the command 
+2.a) 1 Master N-Minion 
+I have setup this you can access the whole setup[here]()
 
+2.b) Multi Master N-minion
+Multi Node setup can also be done in any system like cloud system or local cluster can be created.
+
+3. Kubernetes as a service / Cloud provider [Trending These Days]
+    1. AWS - EKS cloud managed service in Amazon Web Services
+    2. GCP - GKE ( Google Kubernetes Engine )
+    3. Azure - AKS ( Azure Kubernetes Service )
+**You have to install kubectl command which is client of kubernetes.**
+I am sharing two scenerio AWS and Azure where we have setup a k8s cluster.<br />
+so the cloud share some list of username password which we have to save in our machine.<br />
+
+In azure just click on connect in GUI of azure portal you will get the config file.<br />
+
+If you want to connect to any cluster on the remote location you can connect to the cluster by getting the config file(username and password file).
 ```bash
+# Installing steps of kubelet are 
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+# Move it to bin directory
+sudo mv kubect /usr/bin 
+# Next add executable permisison
+sudo chmod +x /usr/bin/kubectl
+# to get the node using the userpass f
 kubectl get nodes --kubeconfig <fileName>.conf
 # In windows you have to specify the complete path of the file
 ```
-
 
 ### Pods 
 The containers are encapsulated known as pods. We can say like pod is a wrapper over container 
