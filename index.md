@@ -399,7 +399,10 @@ Some commands to interact with minikube
 
 ## Here arises a question how to access your application running in a pod ?
 
-Let's Assume  are working in a project and they have to setup a cluster of kubernetes 
+Let's Assume we are working in a project and there we have to setup a cluster of kubernetes 
+
+
+
 
 ### Support or Contact
 
