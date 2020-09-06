@@ -1,8 +1,14 @@
 ## Hola Mundo  
 ### Welcome to My kubernetes Jouney
 
-Coder by profession currently working in [Fiftyfivetech.io]()
+Coder by profession currently working in [Fiftyfivetech.io](https://fiftyfivetec.io).<br />
+Site is best suited for professional and student having basic understanding<br />
+Sources regulary updated.<br />
 Bonus :- We will automate the Azure kubernetes service with terraform.<br />
+
+**CAUTION**
+Before Procedding I am assuming that you are aware of Docker and Contanerization technology.
+<br />
 
 ### Let's start contanirezed app deployment in real world.
 
