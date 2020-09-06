@@ -1,11 +1,7 @@
 ## Hola Mundo  
 ### Welcome to My kubernetes Jouney
 
-I am a DevOps engineer at Fiftyfivetech.<br />
-I will share deep dive knowledge of kubernetes which I learned from various sources.<br />
-I will include the sources i used to learn in the references page.<br />
-I am assuming the reader have some knowledge of Docker.<br />
-Familiar with Contanirezed technology and Images.<br />
+Coder by profession currently working in [Fiftyfivetech.io]()
 Bonus :- We will automate the Azure kubernetes service with terraform.<br />
 
 ### Let's start contanirezed app deployment in real world.
