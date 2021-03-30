@@ -2,7 +2,7 @@
 ### Welcome to My kubernetes Jouney
 Thanks to my organization to gave me the opportunity to learn about this awesome technology.<br />
 My learning includes multiple sources and it gives a basic glimpses of kubernetes.<br />
-Site is best suited for professional and student having basic understanding of docker<br />
+Site is best suited for professional and student having basic understanding of Linux.<br />
 Sources regulary updated.<br />
 Bonus :- We will automate the Azure kubernetes service with terraform.<br />
 
