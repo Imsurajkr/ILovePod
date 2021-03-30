@@ -1,8 +1,8 @@
 ## Hola Mundo  
 ### Welcome to My kubernetes Jouney
-
-Coder by profession currently working in [Fiftyfivetech.io](https://fiftyfivetec.io).<br />
-Site is best suited for professional and student having basic understanding<br />
+Thanks to my organization to gave me the opportunity to learn about this awesome technology.<br />
+My learning includes multiple sources and it gives a basic glimpses of kubernetes.<br />
+Site is best suited for professional and student having basic understanding of docker<br />
 Sources regulary updated.<br />
 Bonus :- We will automate the Azure kubernetes service with terraform.<br />
 
